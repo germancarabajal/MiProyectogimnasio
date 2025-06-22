@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MiProyectogimnasio.Models.Clase>
+@{
+	ViewBag.Title = "Clases que brindamos";
+}
+<h2>Listado de Clases</h2>
+
+<p>
+    <a asp-controller="Clases" asp-action="Create" class="btn btn-primary">Agregar Clase</a>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+        <td>
+           @Html.DisplayNameFor(model => model.NombreClase)
+  
+        </td>
+        <td>@Html.DisplayNameFor(model=> model.Profesor)</td>
+        <td>@Html.DisplayNameFor(model => model.Horario)</td>
+    </tr>
+</thead>
+<tbody>
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@Html.DisplayFor(itemName => item.NombreClase)</td>
+        <td>@Html.DisplayFor(itemName => item.Profesor)</td>
+        <td>@item.Horario</td>
+        <td>
+            <a asp-controller="Clases" asp-action="Editar" asp-route-id="@item.Id"">Editar</a>
+            <a asp-controller="Clases" asp-action="Delete" asp-route-id="@item.Id"">Eliminar</a>
+
+        </td>
+    </tr>
+        
+    }
+</tbody>
+</table>

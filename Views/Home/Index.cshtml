@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Bienvenido";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a QuinoaGym</h1>
+    <p class="text-sm-center">Esta es su pantalla Principal o Home. <br/> 
+        Puedes acceder a Gestionar socios desde el boton "Socios", Gestionar Clases que brinda el gimnasio desde el Boton "Clases."<br />
+        Ademas desde el boton "Inscripcion", podes inscribir socios a las clases que hay disponibles y Visualizar esta inscipcion de socios a una clase,<br />
+        desde el boton descripcion desde el listado de clases.
+        </p>
+    <a asp-controller="Socios" asp-action="Index" class="btn btn-primary btn-lg" >Socios</a>
+    <a asp-controller="Clases" asp-action="Index" class="btn btn-primary btn-lg">Clases</a>
+</div>

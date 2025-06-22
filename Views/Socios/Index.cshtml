@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MiProyectogimnasio.Models.Socio>
+
+@{
+    ViewData["Title"] = "Socios Adheridos";
+}
+
+<h1>Socios Adheridos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Agregar Nuevo Socio</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label>Nombre</label>
+                @*@Html.DisplayNameFor(model => model.Name)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@model MiProyectogimnasio.Models.Clase
+@{
+	ViewBag.Title = "Eliminar Clase";
+}
+<h2>@ViewBag.Title</h2>
+<h3>¿Estás seguro que querés eliminar esta clase?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreClase)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreClase)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Profesor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Profesor)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Horario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Horario)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">Cancelar</a>
+    </form>
+</div>
